@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  appwithdb:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongoWithNode
+  mongoWithNode:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongotest
+      - MONGO_INITDB_ROOT_PASSWORD=testingdocker
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
