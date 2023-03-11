@@ -72,3 +72,14 @@ docker compose up
 ```
 
 
+### GET /
+Get All users that you create
+
+
+### GET /create
+Create one user
+
+### GET /delete
+Delete all users
+
+
